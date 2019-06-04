@@ -18,6 +18,6 @@ mod 'puppetlabs-cisco_ios',
   :git    => 'https://github.com/shermdog/cisco_ios.git',
   :branch => 'devnet-clus-19'
 
-# mod 'shermdog-devnet_demo',
-#   :git    => 'https://github.com/shermdog/devnet_demo.git',
-#   :branch => 'clus_2018'
+mod 'shermdog-devnet_demo',
+  :git    => 'https://github.com/shermdog/devnet_demo.git',
+  :branch => 'clus_2019'

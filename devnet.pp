@@ -36,3 +36,27 @@ package { 'puppet-bolt':
   source => 'http://yum.puppetlabs.com/puppet6/el/7/x86_64/puppet-bolt-1.21.0-1.el7.x86_64.rpm',
   provider => 'rpm',
 }
+
+file { '/etc/puppetlabs/code/environments/production/data/nodes':
+  ensure => directory,
+  owner  => 'pe-puppet',
+  group  => 'pe-puppet',
+  mode   => '0644',
+}
+
+file { '/etc/puppetlabs/code/environments/production/data/common.yaml':
+  ensure => file,
+  owner  => 'pe-puppet',
+  group  => 'pe-puppet',
+  mode   => '0640',
+  content => file(inline_template("<%= File.expand_path(File.dirname(__FILE__)) + '/common.yaml' %>")),
+}
+
+file { '/etc/puppetlabs/code/environments/production/data/nodes/csr1kv.yaml':
+  ensure => file,
+  owner  => 'pe-puppet',
+  group  => 'pe-puppet',
+  mode   => '0640',
+  content => file(inline_template("<%= File.expand_path(File.dirname(__FILE__)) + '/csr1kv.yaml' %>")),
+  require => File['/etc/puppetlabs/code/environments/production/data/nodes'],
+}

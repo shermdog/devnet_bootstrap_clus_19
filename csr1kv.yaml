@@ -1,0 +1,9 @@
+---
+devnet_demo::ntp::servers:
+  '216.239.35.0':
+    ensure: 'present'
+    source_interface: 'GigabitEthernet1'
+  '132.163.97.4':
+    ensure: 'present'
+    minpoll: 5
+    maxpoll: 12
