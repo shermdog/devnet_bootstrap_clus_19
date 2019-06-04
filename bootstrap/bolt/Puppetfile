@@ -1,0 +1,6 @@
+mod 'puppetlabs-netdev_stdlib', '0.18.0'
+
+# Leveraging an in progress branch + POC operational task
+mod 'puppetlabs-cisco_ios',
+  :git    => 'https://github.com/shermdog/cisco_ios.git',
+  :branch => 'devnet-clus-19'

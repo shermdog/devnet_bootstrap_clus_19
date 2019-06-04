@@ -1,0 +1,11 @@
+---
+nodes:
+  - name: 10.10.20.48
+    alias: csr1kv
+    config:
+      transport: remote
+      remote:
+        remote-transport: cisco_ios
+        user: cisco
+        password: cisco_1234!
+        enable_password: cisco_1234!
