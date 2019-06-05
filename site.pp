@@ -35,14 +35,14 @@ node puppet {
   include device_manager::devices
 
   device_manager {'csr1kv':
-  type        => 'cisco_ios',
-  credentials => {
-    host         => '10.10.20.48',
+  type           => 'cisco_ios',
+  credentials    => {
+    host            => '10.10.20.48',
     port            => 22,
-    user        => 'cisco',
+    user            => 'cisco',
     password        => 'cisco_1234!',
     enable_password => 'cisco_1234!',
   },
-  include_module     => false,
+  include_module => false,
   }
 }
